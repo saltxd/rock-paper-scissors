@@ -21,8 +21,8 @@ let computerScore = 0;
 let roundWinner = ""
 
 
-//const computerSelection = getComputerChoice();
 
+//generates the computerChoice to return rock, paper or scissors
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -36,9 +36,9 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-//console.log(getComputerChoice);
-//main game function
-//let playerSelection = prompt('Type: rock, paper or scissors');
+
+
+//playRound function - will be called on later in code
 
 function playRound(playerSelection, computerSelection) {
     
@@ -57,10 +57,11 @@ function playRound(playerSelection, computerSelection) {
     }
  
 }
-
+//game function
 function game() {
     while (playerScore < 5 && computerScore < 5) {
-      const playerSelection = prompt('Type: rock, paper or scissors');
+      let playerSelection = prompt('Type: rock, paper or scissors');
+      playerSelection = playerSelection.toLowerCase(); //convert input to lowercase
       const computerSelection = getComputerChoice();
       playRound(playerSelection, computerSelection);
       console.log(roundWinner);
