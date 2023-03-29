@@ -16,8 +16,11 @@
 //of this one to play a 5 round game that keeps score and reports winner or loser
 //at the end.
 
+let PlayerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
-    computerValue = Math.floor(Math.random() * 3);
+    let computerValue = Math.floor(Math.random() * 3);
     if (computerValue == "0") {
         return "rock";
     } 
@@ -28,12 +31,32 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+console.log(getComputerChoice);
+//main game function
 
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection == "paper")
-        return "you lose! paper beats rock";
+    const playerSelection = 'rock';
+    const computerSelection = getComputerChoice();
+    if (playerSelection === computerSelection) {
+        roundWinner = 'tie'
+    }
+    if (
+       (playerSelection === 'rock' && computerSelection === 'scissors') ||
+       (playerSelection === 'scissors' && computerSelection === 'paper') ||
+       (playerSelection === 'paper' && computerSelection === 'rock') 
+    )    {
+        playerScore++
+        roundWinner = 'player' 
+    }
+    if (
+       (playerSelection === 'rock' && computerSelection === 'paper') ||
+       (playerSelection === 'paper' && computerSelection === 'scissors') ||
+       (playerSelection === 'scissors' && computerSelection === 'rock') 
+    ) {
+        computerScore++
+        roundWinner = 'computer'
+    }
 }
 
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
+
 console.log(playRound(playerSelection, computerSelection));
