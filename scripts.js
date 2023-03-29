@@ -16,15 +16,18 @@
 //of this one to play a 5 round game that keeps score and reports winner or loser
 //at the end.
 
-let PlayerScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
+const computerSelection = getComputerChoice();
+
+
 function getComputerChoice() {
-    let computerValue = Math.floor(Math.random() * 3);
-    if (computerValue == "0") {
+    let randomNumber = Math.floor(Math.random() * 3);
+    if (randomNumber == "0") {
         return "rock";
     } 
-    else if (computerValue == "1") {
+    else if (randomNumber == "1") {
         return "paper";
     } 
     else {
@@ -33,10 +36,9 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice);
 //main game function
-
+let playerSelection = prompt('Type: rock, paper or scissors');
 function playRound(playerSelection, computerSelection) {
-    const playerSelection = 'rock';
-    const computerSelection = getComputerChoice();
+    
     if (playerSelection === computerSelection) {
         roundWinner = 'tie'
     }
@@ -58,5 +60,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+//const playerSelection = 'rock';
 
 console.log(playRound(playerSelection, computerSelection));
