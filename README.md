@@ -1,9 +1,2 @@
 # rock-paper-scissors
-# Create a function to generate a random move for the computer.
-# Create a function to take user input and validate it (must be "rock", "paper", or "scissors").
-# Create a function to compare the user's move with the computer's move and determine the winner.
-# Prompt the user for their move.
-# Call the function to validate the user's move.
-# Generate the computer's move.
-# Call the function to compare the moves and determine the winner.
-# Display the winner in the console.
+We’re going to make a simple implementation of grade-school classic “rock paper scissors”. If you don’t know what that is check the Wikipedia article or this detailed step-by-step. For the moment we’re just going to play the game from the browser console, but we will revisit this project in a later lesson and add a Graphical User Interface with buttons and text, so don’t forget to keep the code on GitHub! You might notice some ‘Live Preview’ links in the student solutions that have a GUI - this is coming in a later lesson. When you get there don’t forget to come back and add your link!
