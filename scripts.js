@@ -17,15 +17,23 @@
 //at the end.
 
 function getComputerChoice() {
-    computerValue = Math.floor(Math.random()* 3);
-    if (computerValue == "0"){
+    computerValue = Math.floor(Math.random() * 3);
+    if (computerValue == "0") {
         return "rock";
-    } else if (computerValue == "1") {
+    } 
+    else if (computerValue == "1") {
         return "paper";
-    } else {
+    } 
+    else {
         return "scissors";
     }
 }
 
+function playRound(playerSelection, computerSelection) {
+    if (computerSelection == "paper")
+        return "you lose! paper beats rock";
+}
 
-console.log(getComputerChoice);
+const playerSelection = 'rock';
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
