@@ -16,11 +16,11 @@
 //of this one to play a 5 round game that keeps score and reports winner or loser
 //at the end.
 
+//global variables
+
 let playerScore = 0;
 let computerScore = 0;
 let roundWinner = ""
-
-
 
 //generates the computerChoice to return rock, paper or scissors
 
@@ -37,8 +37,9 @@ function getComputerChoice() {
     }
 }
 
-
-//playRound function - will be called on later in code
+//playRound function - will be called on later in code 
+//it takes 2 arguments and checks if the two selections are the same and sets
+//roundWinner to indicate the winner
 
 function playRound(playerSelection, computerSelection) {
     
@@ -57,7 +58,9 @@ function playRound(playerSelection, computerSelection) {
     }
  
 }
-//game function
+//game function - use a while loop to keep playing until either computer or 
+//player reach a score of 5
+
 function game() {
     while (playerScore < 5 && computerScore < 5) {
       let playerSelection = prompt('Type: rock, paper or scissors');
