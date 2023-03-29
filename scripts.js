@@ -18,6 +18,7 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let roundWinner = ""
 
 const computerSelection = getComputerChoice();
 
@@ -39,20 +40,18 @@ console.log(getComputerChoice);
 let playerSelection = prompt('Type: rock, paper or scissors');
 
 function playRound(playerSelection, computerSelection) {
-    let result = ""
     
     if (playerSelection === computerSelection) {
-        roundWinner = 'tie'
-        result = ("It\'s a tie. you both chose " + playerSelection)
+        roundWinner = ("It\'s a tie. you both chose " + playerSelection)
     }
+
     if (
        (playerSelection === 'rock' && computerSelection === 'scissors') ||
        (playerSelection === 'scissors' && computerSelection === 'paper') ||
        (playerSelection === 'paper' && computerSelection === 'rock') 
     )    {
         playerScore++
-        roundWinner = 'player' 
-        result = ("You win! " + playerSelection + " beats " + computerSelection)
+        roundWinner = ("You win! " + playerSelection + " beats " + computerSelection)
     }
     if (
        (playerSelection === 'rock' && computerSelection === 'paper') ||
@@ -60,10 +59,13 @@ function playRound(playerSelection, computerSelection) {
        (playerSelection === 'scissors' && computerSelection === 'rock') 
     ) {
         computerScore++
-        roundWinner = 'computer'
-        result = ("You lose! " + computerSelection + " beats " + playerSelection)
+        roundWinner = ("You lose! " + computerSelection + " beats " + playerSelection)
     }
-    console.log(result);
+    
+}
+
+function gameOver() {
+    return playerScore === 5 || computerScore === 5
 }
 
 //const playerSelection = 'rock';
