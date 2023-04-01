@@ -64,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     while (playerScore < 5 && computerScore < 5) {
       let playerSelection = prompt('Type: rock, paper or scissors');
-      playerSelection = playerSelection.toLowerCase(); //convert input to lowercase
+          playerSelection = playerSelection.toLowerCase(); //convert input to lowercase
       const computerSelection = getComputerChoice();
       playRound(playerSelection, computerSelection);
       console.log(roundWinner);
@@ -79,7 +79,7 @@ function game() {
       console.log("It's a tie!");
     }
   }
-game();
+
 
 
 
