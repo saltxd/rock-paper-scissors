@@ -21,8 +21,8 @@
 let playerScore = 0;
 let computerScore = 0;
 let roundWinner = ""
-const buttons = document.querySelectorAll('button');
-const results = document.getElementById('results');
+const resultsDiv = document.querySelector('#results');
+
 
 //generates the computerChoice to return rock, paper or scissors
 
@@ -63,39 +63,15 @@ function playRound(playerSelection) {
     if (playerScore === 5 || computerScore === 5) {
       announceWinner();
     }
- 
 }
 
-//checks if score === 5. disables buttons if true
-
-function checkGameWinner(){
-  if (playerScore === 5){
-    results.textContent = 'You won the game!';
-    disableButtons();
-  } else if (computerScore ===5) {
-    results.textContent = 'You lost the game!';
-    disableButtons();
-  }
-}
-
-function disableButtons(){
-  buttons.forEach((button) => {
-    button.disabled = true;
-  });
-}
-
-function enableButtons() {
-  buttons.forEach((button) => {
-    button.disabled = false;
-  });
-}
-
-function resetGame() {
-  playerScore = 0;
-  computerScore = 0;
-  roundWinner = "";
-  results.textContent = "";
-  enableButtons();
+function displayResults(result){
+  const resultParagraph = document.createElement('p');
+    resultParagraph.textContent = result;
+    resultsDiv.appendChile(resultParagraph);
+  const scoreParagraph = document.createElement('p');
+    scoreParagraph.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+    resultsDiv.appendChild(scoreParagraph);
 }
 
 function game() {
