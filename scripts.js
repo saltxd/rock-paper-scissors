@@ -65,6 +65,8 @@ function playRound(playerSelection) {
     }
 }
 
+//displays results in DOM
+
 function displayResults(result){
   const resultParagraph = document.createElement('p');
     resultParagraph.textContent = result;
@@ -72,6 +74,22 @@ function displayResults(result){
   const scoreParagraph = document.createElement('p');
     scoreParagraph.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
     resultsDiv.appendChild(scoreParagraph);
+}
+
+//announces game winner & resets score to 0
+
+function announceWinner() {
+  let winner = "";
+  if (playerScore > computerScore) {
+      winner = "You won the game!";
+  } else {
+    winner = "You lost the game!";
+  }
+  const winnerParagraph = document.createElement('p');
+    winnerParagraph.textContent = winner;
+    resultsDiv.appendChild(winnerParagraph);
+    playerScore = 0;
+    computerScore = 0;
 }
 
 function game() {
