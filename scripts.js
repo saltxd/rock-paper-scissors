@@ -45,7 +45,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
-    let roundWinner = "";
+    let roundWinner;
     if (playerSelection === computerSelection) {
         roundWinner = `It's a tie. you both chose ${playerSelection}`;
     } else if (
@@ -60,6 +60,7 @@ function playRound(playerSelection) {
         roundWinner = `You lose! ${computerSelection} beats ${playerSelection}`;
     }
     displayResults(roundWinner);
+    
     if (playerScore === 5 || computerScore === 5) {
       announceWinner();
     }
@@ -70,7 +71,7 @@ function playRound(playerSelection) {
 function displayResults(result){
   const resultParagraph = document.createElement('p');
     resultParagraph.textContent = result;
-    resultsDiv.appendChile(resultParagraph);
+    resultsDiv.appendChild(resultParagraph);
   const scoreParagraph = document.createElement('p');
     scoreParagraph.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
     resultsDiv.appendChild(scoreParagraph);
@@ -101,6 +102,7 @@ function game() {
   scissorsBtn.addEventListener('click', () => playRound('scissors'));
 }
 
+game();
 //game function - use a while loop to keep playing until either computer or 
 //player reach a score of 5
 
