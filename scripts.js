@@ -22,7 +22,7 @@ let playerScore = 0;
 let computerScore = 0;
 let roundWinner = ""
 const buttons = document.querySelectorAll('button');
-const results = documents.getElementById('results');
+const results = document.getElementById('results');
 
 //generates the computerChoice to return rock, paper or scissors
 
@@ -43,8 +43,9 @@ function getComputerChoice() {
 //it takes 2 arguments and checks if the two selections are the same and sets
 //roundWinner to indicate the winner
 
-function playRound(playerSelection, computerSelection) {
-    
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice();
+    let roundWinner = "";
     if (playerSelection === computerSelection) {
         roundWinner = `It's a tie. you both chose ${playerSelection}`;
     } else if (
@@ -57,6 +58,10 @@ function playRound(playerSelection, computerSelection) {
     } else {
         computerScore++
         roundWinner = `You lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    displayResults(roundWinner);
+    if (playerScore === 5 || computerScore === 5) {
+      announceWinner();
     }
  
 }
@@ -83,6 +88,14 @@ function enableButtons() {
   buttons.forEach((button) => {
     button.disabled = false;
   });
+}
+
+function resetGame() {
+  playerScore = 0;
+  computerScore = 0;
+  roundWinner = "";
+  results.textContent = "";
+  enableButtons();
 }
 
 function game() {
