@@ -1,0 +1,16 @@
+/* stylesheet */
+.body{
+    display: flex;
+}
+
+.header{
+    display: flex;
+}
+
+.footer{
+    display: flex;
+}
+
+.main{
+    display: flex;
+}
