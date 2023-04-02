@@ -11,6 +11,25 @@ body {
     justify-content: center;
 }
 
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btn-square{
+    width: 150px;
+    height: 150px;
+}
+
+.scores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -21,6 +40,21 @@ body {
     gap: 10px;
     width: 100%;
     padding: 10px;
-    color: var(--primary-light);
+    color: #ddd;
     font-size: 20px;
+  }
+
+  .fa-github {
+    color: #ddd;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  #logo{
+    width: 30px;
+    height:30px;
   }
