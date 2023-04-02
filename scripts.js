@@ -68,12 +68,17 @@ function playRound(playerSelection) {
 
 //displays results in DOM
 
-function displayResults(roundWinner){
+function displayResults(roundWinner) {
   const resultParagraph = document.createElement('p');
-    resultParagraph.textContent = roundWinner;
-    resultsDiv.appendChild(resultParagraph);
-  const scoreSpan = document.querySelector('#score');
-    scoreSpan.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+  resultParagraph.textContent = roundWinner;
+  const scoreParagraph = document.createElement('p');
+  scoreParagraph.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
+
+  // clear the contents of the results div before appending new content
+  resultsDiv.innerHTML = '';
+
+  resultsDiv.appendChild(resultParagraph);
+  resultsDiv.appendChild(scoreParagraph);
 }
 
 //announces game winner & resets score to 0
