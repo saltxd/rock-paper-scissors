@@ -11,6 +11,11 @@ body {
     justify-content: center;
 }
 
+.main{
+    text-align: center;
+    margin-top: 25px;
+}
+
 .buttons{
     display: flex;
     align-items: center;
@@ -27,7 +32,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .footer {
