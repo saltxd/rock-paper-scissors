@@ -107,27 +107,6 @@ function game() {
 }
 
 game();
-//game function - use a while loop to keep playing until either computer or 
-//player reach a score of 5
-
-//function game() {
-   // while (playerScore < 5 && computerScore < 5) {
-    //  let playerSelection = prompt('Type: rock, paper or scissors');
-    //      playerSelection = playerSelection.toLowerCase(); //convert input to lowercase
-    //  const computerSelection = getComputerChoice();
-   //   playRound(playerSelection, computerSelection);
-   //   console.log(roundWinner);
-   //   console.log(`Player Score: ${playerScore}`);
-   //   console.log(`Computer Score: ${computerScore}`);
-  //  }
-  //  if (playerScore > computerScore) {
-  //    console.log('You won the game!');
- //   } else if (computerScore > playerScore) {
-  //    console.log('You lost the game!');
-  //  } else {
- //     console.log("It's a tie!");
- //   }
- // }
 
 
 
